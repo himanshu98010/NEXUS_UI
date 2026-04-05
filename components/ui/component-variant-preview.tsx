@@ -57,10 +57,13 @@ export function ComponentVariantPreview({
 
   if (key === "cards:glass") {
     return (
-      <article className="rounded-2xl border border-white/40 bg-white/70 p-5 shadow-xl backdrop-blur dark:border-white/15 dark:bg-zinc-900/60">
-        <h4 className="font-semibold">Glass Card</h4>
-        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
-          Premium floating surface.
+      <article className="relative overflow-hidden rounded-2xl border border-cyan-200/80 bg-white/70 p-5 shadow-[0_20px_45px_rgba(14,165,233,0.18)] backdrop-blur dark:border-cyan-700/60 dark:bg-cyan-950/35 dark:shadow-[0_20px_45px_rgba(8,47,73,0.5)]">
+        <div className="pointer-events-none absolute -right-10 -top-12 h-32 w-32 rounded-full bg-cyan-300/45 blur-2xl dark:bg-cyan-500/28" />
+        <h4 className="relative font-semibold text-cyan-950 dark:text-cyan-100">
+          Glass Card
+        </h4>
+        <p className="relative mt-2 text-sm text-cyan-800/85 dark:text-cyan-200/85">
+          Premium floating surface with ambient glow.
         </p>
       </article>
     );
@@ -68,24 +71,29 @@ export function ComponentVariantPreview({
 
   if (key === "cards:elevated") {
     return (
-      <article className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
-        <p className="text-xs uppercase tracking-wide text-zinc-500">
+      <article className="rounded-2xl border border-indigo-200 bg-linear-to-br from-white via-indigo-50/60 to-blue-50/70 p-5 shadow-[0_18px_40px_rgba(79,70,229,0.22)] dark:border-indigo-700/70 dark:from-indigo-950/40 dark:via-indigo-950/55 dark:to-blue-950/55 dark:shadow-[0_18px_40px_rgba(30,27,75,0.55)]">
+        <p className="text-xs uppercase tracking-wide text-indigo-700 dark:text-indigo-300">
           Elevated
         </p>
-        <h4 className="mt-2 font-semibold">Revenue Summary</h4>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
+        <h4 className="mt-2 font-semibold text-indigo-950 dark:text-indigo-100">
+          Revenue Summary
+        </h4>
+        <p className="mt-1 text-sm text-indigo-800/85 dark:text-indigo-200/85">
           $42,890 this month
         </p>
+        <div className="mt-3 h-1.5 w-24 rounded-full bg-linear-to-r from-indigo-500 to-sky-400" />
       </article>
     );
   }
 
   if (key === "cards:minimal") {
     return (
-      <article className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
-        <h4 className="font-semibold">Minimal Card</h4>
-        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
-          Low-noise container.
+      <article className="rounded-xl border border-emerald-200 bg-emerald-50/65 p-5 dark:border-emerald-700/65 dark:bg-emerald-950/25">
+        <h4 className="font-semibold text-emerald-900 dark:text-emerald-100">
+          Minimal Card
+        </h4>
+        <p className="mt-2 text-sm text-emerald-800/80 dark:text-emerald-200/80">
+          Low-noise container with soft theme tint.
         </p>
       </article>
     );

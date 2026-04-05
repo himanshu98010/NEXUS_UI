@@ -41,36 +41,46 @@ export function ComponentPreview({ slug }: ComponentPreviewProps) {
   if (slug === "cards") {
     return (
       <div className="grid gap-4 md:grid-cols-2">
-        <article className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-          <h4 className="font-semibold">Basic card</h4>
-          <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
-            Clean content presentation with subtle elevation.
+        <article className="rounded-2xl border border-cyan-200/80 bg-white/70 p-5 shadow-[0_18px_38px_rgba(14,165,233,0.16)] backdrop-blur dark:border-cyan-700/70 dark:bg-cyan-950/30">
+          <h4 className="font-semibold text-cyan-950 dark:text-cyan-100">
+            Glass card
+          </h4>
+          <p className="mt-2 text-sm text-cyan-800/85 dark:text-cyan-200/85">
+            Floating panel with blur and cool tint.
           </p>
         </article>
-        <article className="overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-          <div className="h-28 bg-linear-to-r from-amber-300 to-orange-300" />
+        <article className="overflow-hidden rounded-2xl border border-amber-200 bg-white shadow-[0_16px_34px_rgba(251,146,60,0.2)] dark:border-amber-700/70 dark:bg-zinc-900">
+          <div className="h-28 bg-linear-to-r from-amber-300 via-orange-300 to-rose-300 dark:from-amber-500/60 dark:via-orange-500/60 dark:to-rose-500/60" />
           <div className="p-4">
-            <h4 className="font-semibold">Image card</h4>
-            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
-              Useful for media-heavy cards.
+            <h4 className="font-semibold text-amber-950 dark:text-amber-100">
+              Image card
+            </h4>
+            <p className="mt-2 text-sm text-amber-800/85 dark:text-amber-200/80">
+              Warm showcase surface for media-heavy blocks.
             </p>
           </div>
         </article>
-        <article className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+        <article className="rounded-2xl border border-violet-200 bg-violet-50/70 p-5 shadow-sm dark:border-violet-700/70 dark:bg-violet-950/25">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-full bg-linear-to-r from-cyan-500 to-indigo-500" />
             <div>
-              <h4 className="font-semibold">Profile card</h4>
-              <p className="text-xs text-zinc-500">Design Engineer</p>
+              <h4 className="font-semibold text-violet-950 dark:text-violet-100">
+                Profile card
+              </h4>
+              <p className="text-xs text-violet-700/80 dark:text-violet-300/80">
+                Design Engineer
+              </p>
             </div>
           </div>
         </article>
-        <article className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-          <p className="text-xs uppercase tracking-wide text-zinc-500">
+        <article className="rounded-2xl border border-emerald-200 bg-linear-to-br from-emerald-50/90 to-teal-50/90 p-5 shadow-sm dark:border-emerald-700/70 dark:from-emerald-950/35 dark:to-teal-950/35">
+          <p className="text-xs uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
             Pricing card
           </p>
-          <p className="mt-2 text-2xl font-semibold">$29/mo</p>
-          <button className="mt-4 w-full rounded-lg bg-zinc-900 py-2 text-sm text-white dark:bg-zinc-100 dark:text-zinc-900">
+          <p className="mt-2 text-2xl font-semibold text-emerald-950 dark:text-emerald-100">
+            $29/mo
+          </p>
+          <button className="mt-4 w-full rounded-lg bg-emerald-600 py-2 text-sm text-white transition hover:bg-emerald-500 dark:bg-emerald-500 dark:hover:bg-emerald-400">
             Start
           </button>
         </article>
