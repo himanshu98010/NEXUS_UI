@@ -191,7 +191,7 @@ export function ComponentVariantPreview({
     );
   }
 
-  if (slug === "modals") {
+  if (key === "modals:confirm") {
     return (
       <>
         <button
@@ -204,23 +204,19 @@ export function ComponentVariantPreview({
         {activeModal === variantId ? (
           <div className="fixed inset-0 z-50 grid place-items-center bg-black/40 p-4 backdrop-blur-sm">
             <div className="w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-6 shadow-2xl dark:border-zinc-800 dark:bg-zinc-900">
-              <h3 className="text-lg font-semibold">
-                {variantId === "feature"
-                  ? "Unlock Pro Features"
-                  : "Confirm Action"}
-              </h3>
+              <h3 className="text-lg font-semibold">Delete project?</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
-                This is a {variantId} modal variant.
+                This action cannot be undone.
               </p>
               <div className="mt-6 flex justify-end gap-2">
                 <button
                   onClick={() => setActiveModal(null)}
                   className="rounded-lg border border-zinc-300 px-3 py-2 text-sm"
                 >
-                  Close
+                  Cancel
                 </button>
-                <button className="rounded-lg bg-zinc-900 px-3 py-2 text-sm text-white">
-                  Continue
+                <button className="rounded-lg bg-rose-600 px-3 py-2 text-sm text-white">
+                  Delete
                 </button>
               </div>
             </div>
@@ -230,22 +226,117 @@ export function ComponentVariantPreview({
     );
   }
 
-  if (slug === "navbar") {
+  if (key === "modals:centered") {
     return (
-      <nav className="flex items-center justify-between rounded-xl border border-zinc-200 bg-white px-4 py-3 dark:border-zinc-800 dark:bg-zinc-900">
+      <>
+        <button
+          type="button"
+          onClick={() => setActiveModal(variantId)}
+          className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-800 dark:border-zinc-700 dark:text-zinc-200"
+        >
+          Open centered
+        </button>
+        {activeModal === variantId ? (
+          <div className="fixed inset-0 z-50 grid place-items-center bg-black/35 p-4">
+            <div className="w-full max-w-sm rounded-2xl border border-zinc-200 bg-white p-5 shadow-2xl dark:border-zinc-800 dark:bg-zinc-900">
+              <h3 className="text-base font-semibold">Invite team</h3>
+              <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
+                Add members to this workspace.
+              </p>
+              <div className="mt-5 flex justify-end">
+                <button
+                  onClick={() => setActiveModal(null)}
+                  className="rounded-lg bg-zinc-900 px-3 py-2 text-sm text-white dark:bg-zinc-100 dark:text-zinc-900"
+                >
+                  Done
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : null}
+      </>
+    );
+  }
+
+  if (key === "modals:feature") {
+    return (
+      <>
+        <button
+          type="button"
+          onClick={() => setActiveModal(variantId)}
+          className="rounded-lg bg-linear-to-r from-sky-500 to-cyan-500 px-4 py-2 text-sm font-semibold text-white"
+        >
+          Open feature modal
+        </button>
+        {activeModal === variantId ? (
+          <div className="fixed inset-0 z-50 grid place-items-center bg-black/40 p-4">
+            <div className="w-full max-w-lg rounded-2xl border border-zinc-200 bg-white p-6 shadow-2xl dark:border-zinc-800 dark:bg-zinc-900">
+              <p className="text-xs uppercase tracking-wide text-zinc-500">
+                Pro feature
+              </p>
+              <h3 className="mt-2 text-xl font-semibold">
+                Unlock advanced analytics
+              </h3>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
+                Upgrade to access cohort trends, funnel maps and retention
+                diagnostics.
+              </p>
+              <div className="mt-5 flex justify-end gap-2">
+                <button
+                  onClick={() => setActiveModal(null)}
+                  className="rounded-lg border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700"
+                >
+                  Maybe later
+                </button>
+                <button className="rounded-lg bg-zinc-900 px-3 py-2 text-sm text-white dark:bg-zinc-100 dark:text-zinc-900">
+                  Upgrade
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : null}
+      </>
+    );
+  }
+
+  if (key === "navbar:glass") {
+    return (
+      <nav className="flex items-center justify-between rounded-xl border border-white/40 bg-white/70 px-4 py-3 backdrop-blur dark:border-white/15 dark:bg-zinc-900/60">
         <span className="font-semibold">Nexus UI</span>
-        <div className="hidden gap-5 text-sm md:flex">
-          <span>Components</span>
-          <span>Pricing</span>
-        </div>
-        <button className="rounded-lg bg-zinc-900 px-3 py-2 text-xs text-white">
+        <button className="rounded-lg bg-zinc-900 px-3 py-2 text-xs text-white dark:bg-zinc-100 dark:text-zinc-900">
           Browse
         </button>
       </nav>
     );
   }
 
-  if (slug === "grid-layouts") {
+  if (key === "navbar:split") {
+    return (
+      <nav className="flex items-center justify-between rounded-xl border border-zinc-200 bg-white px-4 py-3 dark:border-zinc-800 dark:bg-zinc-900">
+        <span className="font-semibold">Nexus UI</span>
+        <div className="hidden gap-6 text-sm md:flex">
+          <span>Components</span>
+          <span>Pricing</span>
+        </div>
+        <button className="rounded-lg border border-zinc-300 px-3 py-2 text-xs dark:border-zinc-700">
+          Sign in
+        </button>
+      </nav>
+    );
+  }
+
+  if (key === "navbar:compact") {
+    return (
+      <nav className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-3 py-2 dark:border-zinc-800 dark:bg-zinc-900">
+        <span className="text-sm font-semibold">Nexus UI</span>
+        <button className="rounded-md bg-zinc-900 px-2.5 py-1.5 text-xs text-white dark:bg-zinc-100 dark:text-zinc-900">
+          Menu
+        </button>
+      </nav>
+    );
+  }
+
+  if (key === "grid-layouts:dashboard") {
     return (
       <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <div className="rounded-xl border border-zinc-200 bg-white p-3 shadow-sm lg:col-span-2 dark:border-zinc-800 dark:bg-zinc-900">
@@ -256,6 +347,41 @@ export function ComponentVariantPreview({
         </div>
         <div className="rounded-xl border border-zinc-200 bg-white p-3 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
           Revenue
+        </div>
+      </section>
+    );
+  }
+
+  if (key === "grid-layouts:bento") {
+    return (
+      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="rounded-xl border border-zinc-200 bg-white p-3 shadow-sm lg:col-span-4 dark:border-zinc-800 dark:bg-zinc-900">
+          Feature spotlight
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-white p-3 shadow-sm lg:col-span-2 dark:border-zinc-800 dark:bg-zinc-900">
+          Quick links
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-white p-3 shadow-sm lg:col-span-2 dark:border-zinc-800 dark:bg-zinc-900">
+          Team
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-white p-3 shadow-sm lg:col-span-4 dark:border-zinc-800 dark:bg-zinc-900">
+          Usage
+        </div>
+      </section>
+    );
+  }
+
+  if (key === "grid-layouts:stats") {
+    return (
+      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="rounded-xl border border-zinc-200 bg-white p-3 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          MRR
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-white p-3 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          Churn
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-white p-3 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          Conversion
         </div>
       </section>
     );

@@ -23,7 +23,7 @@ export default function Home() {
       </div>
 
       <main className="mx-auto mt-8 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <section className="relative overflow-hidden rounded-3xl border border-zinc-200/70 bg-gradient-to-b from-white/85 to-zinc-50/85 p-6 shadow-[0_24px_70px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:border-zinc-800/80 dark:bg-gradient-to-b dark:from-zinc-900/85 dark:to-zinc-950/85 md:p-8 lg:p-9">
+        <section className="relative overflow-hidden rounded-3xl border border-zinc-200/70 bg-linear-to-b from-white/85 to-zinc-50/85 p-6 shadow-[0_24px_70px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:border-zinc-800/80 dark:bg-linear-to-b dark:from-zinc-900/85 dark:to-zinc-950/85 md:p-8 lg:p-9">
           <div className="pointer-events-none absolute inset-0">
             <div className="animate-pulse-slow absolute -left-20 top-12 h-52 w-52 rounded-full bg-cyan-400/25 blur-3xl dark:bg-cyan-500/22" />
             <div className="animate-pulse-slower absolute right-6 top-10 h-48 w-48 rounded-full bg-indigo-400/18 blur-3xl dark:bg-indigo-500/20" />
